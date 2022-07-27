@@ -6,7 +6,7 @@
         <v-toolbar-title class="hidden-sm-and-down">Ken_Cir Website</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-container class="text-right">
-          <span class="mr-2">最終更新 2022年7月26日</span>
+          <span class="mr-2">最終更新 2022年7月27日</span>
         </v-container>
       </v-app-bar>
 
@@ -31,7 +31,7 @@
     <footer>
       <v-footer padless class="mt-16">
         <v-col class="text-center" cols="12">
-          {{ new Date().getFullYear() }} — <strong>Ken_Cir</strong>
+          {{ new Date().getFullYear() }} — <strong>Ken_Cir(魔法少女と科学者少年の旅日記)</strong>
         </v-col>
       </v-footer>
     </footer>
