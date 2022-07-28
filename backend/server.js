@@ -11,5 +11,11 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
+
 app.use('/blog', require('./routers/blog'));
-app.listen(3000)
+app.listen(3000, function () {
+    console.log(`Server listening to http://localhost:3000`);
+});

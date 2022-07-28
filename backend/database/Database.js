@@ -22,10 +22,25 @@ function isConnect() {
     return connected;
 }
 
+/**
+ * 
+ * @param {number} id 
+ * @param {Function} callback 
+ */
+function getBlog(id, callback) {
+    connection.query('SELECT * FROM `blogs` WHERE id = ?', function (error, results, fields) {
+        if (error) console.error(error);
+        callback(results);
+    });
+}
+
+/**
+ * 
+ * @param {Function} callback 
+ */
 function getAllBlog(callback) {
     connection.query('SELECT * FROM `blogs`', function (error, results, fields) {
         if (error) console.error(error);
-        console.log(results);
         callback(results);
     });
 }

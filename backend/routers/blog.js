@@ -8,4 +8,10 @@ router.get('/getall', function (req, res, next) {
     });
 });
 
+router.get('/get/:id', function (req, res, next) {
+    getAllBlog(function (result) {
+        res.send(result);
+    });
+});
+
 module.exports = router;

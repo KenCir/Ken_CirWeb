@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 const ArticleDetail = () => import("../views/ArticleDetail.vue");
+const PostBlog = () => import("../views/PostBlogView.vue");
 
 Vue.use(VueRouter)
 
@@ -25,13 +26,18 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "blog" */ '../views/BlogView.vue')
+    component: () => import('../views/BlogView.vue')
   },
   {
     path: "/articles/:id",
     name: "article-detail",
     component: ArticleDetail
-  }
+  },
+  {
+    path: "/blog/post",
+    name: "post-blog",
+    component: PostBlog
+  },
 ]
 
 const router = new VueRouter({
