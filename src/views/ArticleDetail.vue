@@ -4,7 +4,7 @@
 
       <h1 class="pt-5">{{ blogs.title }}</h1>
 
-      <h3 class="pt-15" v-html="htmlText(blogs.content)"></h3>
+      <h3 class="pt-15" v-html="blogs.content"></h3>
     </v-card-text>
   </v-card>
 </template>
@@ -21,17 +21,11 @@ export default {
 
   mounted(){
     axios
-      .get('http://localhost:3000/blog/getall')
+      .get(`api/blog/get/${this.$route.params.id}`)
       .then(response => {
-        console.log(response.data[0])
-        (this.blogs = response.data[this.$route.params.id - 1])
+        console.log(response.data.title);
+        this.blogs = response.data
       })
-  },
-
-  methods: {
-    htmlText(msg) {
-      return msg.replace(/\r?\n/g, "<br>");
-    },
   },
 };
 </script>

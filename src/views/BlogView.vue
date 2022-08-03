@@ -10,7 +10,7 @@
           }}</v-card-title>
 
           <v-card-text
-            v-html="htmlText(blog.subtitle)"
+            v-html="blog.subtitle"
             class="text--primary"
           ></v-card-text>
 
@@ -108,15 +108,10 @@ export default {
   }),
   mounted(){
     axios
-      .get('http://localhost:3000/blog/getall')
+      .get('api/blog/getall')
       .then(response => {
         (this.blogs = response.data)
       })
-  },
-  methods: {
-    htmlText(msg) {
-      return msg.replace(/\r?\n/g, "<br>");
-    },
   },
 };
 </script>

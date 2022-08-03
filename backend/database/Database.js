@@ -28,9 +28,10 @@ function isConnect() {
  * @param {Function} callback 
  */
 function getBlog(id, callback) {
-    connection.query('SELECT * FROM `blogs` WHERE id = ?', function (error, results, fields) {
+    connection.query('SELECT * FROM `blogs` WHERE id = ?', [Number(id)], function (error, results, fields) {
+        console.log(results);
         if (error) console.error(error);
-        callback(results);
+        callback(results[0]);
     });
 }
 
@@ -45,4 +46,16 @@ function getAllBlog(callback) {
     });
 }
 
-module.exports = { isConnect, getAllBlog };
+/**
+ * 
+ * @param {Function} callback 
+ */
+function submitBlog(title, subtitle, renderHTML, callback) {
+    console.log(title);
+    connection.query('INSERT INTO blogs (title, subtitle, content) VALUES (?, ?, ?)', [title, subtitle, renderHTML], function (error, results, fields) {
+        if (error) console.error(error);
+        callback(results);
+    });
+}
+
+module.exports = { isConnect, getBlog, getAllBlog, submitBlog };
