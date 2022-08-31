@@ -5,10 +5,12 @@
         <v-row>
           <v-col cols="12" sm="6">
             <v-text-field v-model="title" label="タイトル" filled></v-text-field>
+            <p v-if="checkTitle" class="error-msg">タイトルは入力必須項目です</p>
           </v-col>
 
           <v-col cols="12" sm="6">
             <v-text-field v-model="subtitle" label="サブタイトル" filled></v-text-field>
+            <p v-if="checkSubTitle" class="error-msg">サブタイトルは入力必須項目です</p>
           </v-col>
         </v-row>
 
@@ -16,11 +18,17 @@
           <v-textarea color="teal" rows="10" v-model="input" @input="compileMarkdown()">
             <template v-slot:label>本文</template>
           </v-textarea>
+          <p v-if="checkContent" class="error-msg">本文は入力必須項目です</p>
         </v-col>
+
+        <v-col cols="12" sm="6">
+            <v-text-field v-model="password" label="パスワード" filled></v-text-field>
+            <p v-if="checkSubTitle" class="error-msg">パスワードは入力必須項目です</p>
+          </v-col>
 
         <v-card-actions class="justify-center">
           <v-btn class="white--text" color="deep-purple accent-4" @click="submit()">
-            サブミット
+            投稿
           </v-btn>
         </v-card-actions>
 
@@ -49,7 +57,7 @@ import axios from 'axios';
 export default {
   name: "PostBlog",
   data() {
-    let md = new markdownIt({
+    const md = new markdownIt({
       highlight: function (code, lang) {
         return hljs.highlightAuto(code, [lang]).value;
       },
@@ -79,7 +87,9 @@ export default {
       renderHTML: "",
       input: "",
       title: "",
-      subtitle: ""
+      subtitle: "",
+      password: "",
+      submitted: false 
     };
   },
   methods: {
@@ -91,7 +101,7 @@ export default {
       .post('api/blog/submit', {
         title: this.title,
         subtitle: this.subtitle,
-        content: this.renderHTML
+        content: (this.renderHTML.replace(/\r?\n/g, "<br>"))
       })
       .then(response => {
         console.log(response.data);
@@ -99,6 +109,17 @@ export default {
       });
     }
   },
+  computed:{
+    checkTitle(){
+      return this.title.length < 1;
+    },
+    checkSubTitle(){
+      return this.subtitle.length < 1;
+    },
+    checkContent(){
+      return this.input.length < 1;
+    }
+  }
 };
 </script>
 
@@ -137,5 +158,9 @@ export default {
   border-radius: 5px;
   color: #9f3b3a;
   background-color: #f0d9d9;
+}
+
+.error-msg {
+  color: red;
 }
 </style>

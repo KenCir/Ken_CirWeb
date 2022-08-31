@@ -29,7 +29,6 @@ function isConnect() {
  */
 function getBlog(id, callback) {
     connection.query('SELECT * FROM `blogs` WHERE id = ?', [Number(id)], function (error, results, fields) {
-        console.log(results);
         if (error) console.error(error);
         callback(results[0]);
     });

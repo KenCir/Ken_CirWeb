@@ -1,8 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-const ArticleDetail = () => import("../views/ArticleDetail.vue");
-const PostBlog = () => import("../views/PostBlogView.vue");
 
 Vue.use(VueRouter)
 
@@ -10,34 +7,33 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: () => import('../views/HomeView.vue')
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import('../views/AboutView.vue')
   },
   {
-    path: '/blog',
-    name: 'blog',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: '/blogs',
+    name: 'blogs',
+    component: () => import('../views/BlogListView.vue')
+  },
+  {
+    path: "/blogs/post",
+    name: "post-blog",
+    component: () => import('../views/PostBlogView.vue')
+  },
+  {
+    path: "/blogs/:id",
+    name: "blog-view",
     component: () => import('../views/BlogView.vue')
   },
   {
-    path: "/articles/:id",
-    name: "article-detail",
-    component: ArticleDetail
-  },
-  {
-    path: "/blog/post",
-    name: "post-blog",
-    component: PostBlog
-  },
+    path: '*',
+    name: 'NotFound',
+    component: () => import('../views/NotFoundView.vue')
+  }
 ]
 
 const router = new VueRouter({

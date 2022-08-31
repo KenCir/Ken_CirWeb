@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "server": "node backend/server.js"
+    "server": "node server.js"
   },
   "dependencies": {
     "@iktakahiro/markdown-it-katex": "^4.0.1",

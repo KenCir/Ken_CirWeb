@@ -6,7 +6,7 @@
         <v-toolbar-title class="hidden-sm-and-down">Ken_Cir Website</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-container class="text-right">
-          <span class="mr-2">最終更新 2022年7月27日</span>
+          <span class="mr-2">最終更新 2022年8月31日</span>
         </v-container>
       </v-app-bar>
 
@@ -18,6 +18,9 @@
             </v-list-item>
             <v-list-item>
               <v-list-item-title><router-link to="/about">About</router-link></v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title><router-link to="/blogs">Blogs</router-link></v-list-item-title>
             </v-list-item>
           </v-list-item-group>
         </v-list>
@@ -31,7 +34,7 @@
     <footer>
       <v-footer padless class="mt-16">
         <v-col class="text-center" cols="12">
-          {{ new Date().getFullYear() }} — <strong>Ken_Cir(魔法少女と科学者少年の旅日記)</strong>
+          {{ new Date().getFullYear() }} — <strong>Ken_Cir(幻想地底国)</strong>
         </v-col>
       </v-footer>
     </footer>
