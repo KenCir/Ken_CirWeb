@@ -3,7 +3,7 @@
     <h1 class="text-center pt-10">Blog</h1>
     <v-row class="pt-10">
       <v-col v-for="blog in blogs" v-bind:key="blog.id">
-        <v-card class="mx-auto" width="300" height="230">
+        <v-card class="mx-auto" width="300" height="150">
           <v-card-title class="pt-5">{{
             blog.title
           }}</v-card-title>
@@ -15,9 +15,7 @@
 
           <v-card-actions>
             <router-link :to="{ name: 'blog-view', params: { id: blog.id } }">
-            <v-btn color="orange" text :bottom="true" :absolute="true"
-              >もっと見る</v-btn
-            >
+            <v-btn color="green" text :bottom="true" :absolute="true">続きを読む</v-btn>
             </router-link>
           </v-card-actions>
         </v-card>
