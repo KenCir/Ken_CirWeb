@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkken_cirweb"]=self["webpackChunkken_cirweb"]||[]).push([[408],{6408:function(t,e,n){n.r(e),n.d(e,{default:function(){return o}});var s=n(2118),u=function(){var t=this,e=t._self._c;return e("div",{attrs:{id:"home"}},[e(s.Z,{staticClass:"text-center"},[e("h1",{staticClass:"purple--text text--accent-2 pt-16"},[t._v("404 Not Found")])])],1)},c=[],r={name:"Home"},l=r,a=n(1001),i=(0,a.Z)(l,u,c,!1,null,null,null),o=i.exports}}]);
+//# sourceMappingURL=408.7b13efc1.js.map
