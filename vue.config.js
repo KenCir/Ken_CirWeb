@@ -3,6 +3,4 @@ module.exports = defineConfig({
   transpileDependencies: [
     'vuetify'
   ],
-  outputDir: 'docs',
-  publicPath: '/ken_cirweb',
 })
