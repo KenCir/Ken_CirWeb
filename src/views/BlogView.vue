@@ -11,17 +11,17 @@
 import axios from 'axios';
 
 export default {
-  name: "ArticleDetail",
+  name: "BlogView",
 
   data: () => ({
     blogs: {},
   }),
 
-  mounted(){
+  mounted() {
     axios
       .get(`api/blog/get/${this.$route.params.id}`)
       .then(response => {
-        console.log(response.data.title);
+        console.log(response.data);
         this.blogs = response.data
       })
   },

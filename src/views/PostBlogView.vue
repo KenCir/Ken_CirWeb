@@ -97,15 +97,31 @@ export default {
       this.renderHTML = this.markdownIt.render(this.input);
     },
     submit: function () {
+      if (!this.title || !this.subtitle || !this.input || !this.password) {
+        alert('一部項目が未入力です');
+        return;
+      }
+
       axios
       .post('api/blog/submit', {
         title: this.title,
         subtitle: this.subtitle,
-        content: (this.renderHTML.replace(/\r?\n/g, "<br>"))
+        content: (this.renderHTML.replace(/\r?\n/g, "<br>")),
+        password: this.password
       })
       .then(response => {
-        console.log(response.data);
         alert('送信しました');
+      })
+      .catch(error => {
+        if (error.response.status === 403) {
+          alert('パスワードが違います');
+        }
+        else if (error.response.status === 500) {
+          alert('サーバー側でエラーが発生しました、ログを確認してください');
+        }
+        else {
+          alert(`不明なエラーです、StatusCode: ${error.response.status}`);
+        }
       });
     }
   },

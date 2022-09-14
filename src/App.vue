@@ -20,7 +20,7 @@
               <v-list-item-title><router-link to="/about" style="text-decoration: none;">About</router-link></v-list-item-title>
             </v-list-item>
             <v-list-item>
-              <v-list-item-title><!--<router-link to="/blogs" style="text-decoration: none;">Blog</router-link>--><s>Blog</s></v-list-item-title>
+              <v-list-item-title><router-link to="/blogs" style="text-decoration: none;">Blog</router-link></v-list-item-title>
             </v-list-item>
             <v-list-item>
               <v-list-item-title><router-link to="/works" style="text-decoration: none;">Work</router-link></v-list-item-title>

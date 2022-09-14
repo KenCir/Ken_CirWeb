@@ -1,4 +1,4 @@
-const { getAllBlog } = require('../database/Database');
+const { getAllBlog } = require('../database/database');
 const express = require('express');
 const router = express.Router();
 

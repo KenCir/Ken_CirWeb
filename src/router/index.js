@@ -7,6 +7,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
+    // こうやって読み込んだ方が軽くなるらしい
     component: () => import('../views/HomeView.vue')
   },
   {
@@ -14,7 +15,6 @@ const routes = [
     name: 'about',
     component: () => import('../views/AboutView.vue')
   },
-  /*
   {
     path: '/blogs',
     name: 'blogs',
@@ -30,7 +30,6 @@ const routes = [
     name: "blog-view",
     component: () => import('../views/BlogView.vue')
   },
-  */
   {
     path: '/works',
     name: 'work',
