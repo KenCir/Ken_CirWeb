@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkken_cirweb"]=self["webpackChunkken_cirweb"]||[]).push([[122],{6122:function(t,e,n){n.r(e),n.d(e,{default:function(){return i}});var s=n(2118),u=function(){var t=this,e=t._self._c;return e("div",{attrs:{id:"home"}},[e(s.Z,{staticClass:"text-center"},[e("h1",{staticClass:"purple--text text--accent-2 pt-16"},[t._v("404 Not Found")])])],1)},c=[],l={name:"Home",mounted(){console.log("[31m こ こ に は な に も な い")}},r=l,a=n(1001),o=(0,a.Z)(r,u,c,!1,null,null,null),i=o.exports}}]);
+//# sourceMappingURL=122.bfb84971.js.map
