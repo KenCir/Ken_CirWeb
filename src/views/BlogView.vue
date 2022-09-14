@@ -2,6 +2,7 @@
   <v-card flat class="text-center">
     <v-card-text>
       <h1 class="pt-5">{{ blogs.title }}</h1>
+      <h4 class="pt-3">{{ blogs.create_time }}に投稿</h4>
       <h3 class="pt-15" v-html="blogs.content"></h3>
     </v-card-text>
   </v-card>
@@ -21,7 +22,6 @@ export default {
     axios
       .get(`api/blog/get/${this.$route.params.id}`)
       .then(response => {
-        console.log(response.data);
         this.blogs = response.data
       })
   },

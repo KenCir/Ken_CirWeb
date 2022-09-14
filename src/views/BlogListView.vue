@@ -3,11 +3,13 @@
     <h1 class="text-center pt-10">Blog</h1>
     <v-row class="pt-10">
       <v-col v-for="blog in blogs" v-bind:key="blog.id">
-        <v-card class="mx-auto" width="300" height="150">
+        <v-card class="mx-auto" width="300" height="200">
           <v-card-title class="pt-5">{{
             blog.title
           }}</v-card-title>
-
+          <v-card-text>{{
+            blog.create_time
+          }}に投稿</v-card-text>
           <v-card-text
             v-html="blog.subtitle"
             class="text--primary"
