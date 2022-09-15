@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkken_cirweb"]=self["webpackChunkken_cirweb"]||[]).push([[307],{6888:function(t,e,n){n.r(e),n.d(e,{default:function(){return a}});var s=function(){var t=this;t._self._c;return t._m(0)},l=[function(){var t=this,e=t._self._c;return e("div",{attrs:{id:"blog-list"}},[e("h1",{staticClass:"text-center pt-10"},[t._v("Blog")]),e("h3",{staticClass:"text-center pt-5"},[t._v("準備中")])])}],r={name:"BlogList"},c=r,i=n(1001),u=(0,i.Z)(c,s,l,!1,null,null,null),a=u.exports}}]);
+//# sourceMappingURL=307.ab37b4d4.js.map
