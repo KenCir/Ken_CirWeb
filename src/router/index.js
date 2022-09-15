@@ -21,16 +21,6 @@ const routes = [
     component: () => import('../views/BlogListView.vue')
   },
   {
-    path: "/blogs/post",
-    name: "post-blog",
-    component: () => import('../views/PostBlogView.vue')
-  },
-  {
-    path: "/blogs/:id",
-    name: "blog-view",
-    component: () => import('../views/BlogView.vue')
-  },
-  {
     path: '/works',
     name: 'work',
     component: () => import('../views/WorkView.vue')

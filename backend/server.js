@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const logger = require('morgan');
-const database = require('./backend/database/database');
+const database = require('./database/database');
 const app = express();
 app.use(logger('dev'));
 app.use(express.json());
@@ -15,7 +15,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api', require('./backend/routers/api'));
+app.use('/api', require('./routers/api'));
 app.listen(3000, function () {
     console.log(`Server listening to http://localhost:3000`);
 });
