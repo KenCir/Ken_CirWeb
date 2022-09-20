@@ -30,7 +30,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #home h1 {
   font-family: "Roboto-ThinItalic";
 }

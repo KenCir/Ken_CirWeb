@@ -10,8 +10,9 @@
 export default {
   name: "Home",
   mounted() {
-    // w
-    console.log("\u001b[31m こ こ に は な に も な い");
+    // もう少しいい感じにしたいね
+    console.log('\u001b[31m こ こ に は な に も な い');
+    console.log('\u001b[31m は や く か え る の だ');
   },
 };
 </script>
