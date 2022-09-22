@@ -10,7 +10,7 @@
         >
         <v-spacer></v-spacer>
         <v-container class="text-right">
-          <span class="mr-2">最終更新 2022年9月3日</span>
+          <span class="mr-2">最終更新 2022年9月22日</span>
         </v-container>
       </v-app-bar>
 
