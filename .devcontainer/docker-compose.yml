@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye
+    volumes:
+      - ../:/workspace:cached
+      - node_modules:/workspace/node_modules
+    command: sleep infinity
+
+volumes:
+  node_modules:
