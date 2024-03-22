@@ -7,6 +7,9 @@ services:
       - ../:/workspace:cached
       - node_modules:/workspace/node_modules
     command: sleep infinity
+    ports:
+      - 3000:3000
+      - 24678:24678
 
 volumes:
   node_modules:

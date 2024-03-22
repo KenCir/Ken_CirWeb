@@ -6,12 +6,7 @@
   "postCreateCommand": "sudo chown -R node /workspace && pnpm config set store-dir /home/node/.local/share/pnpm/store && pnpm install --frozen-lockfile",
   "customizations": {
     "vscode": {
-      "extensions": [
-        "esbenp.prettier-vscode",
-        "dbaeumer.vscode-eslint",
-        "EditorConfig.EditorConfig",
-        "Vue.volar"
-      ]
+      "extensions": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint", "EditorConfig.EditorConfig", "Vue.volar"]
     }
   }
 }
